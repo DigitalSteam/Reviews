@@ -13,7 +13,7 @@ CREATE TABLE Reviews (
   game_id int NOT NULL,
   user_id int NOT NULL,
   review varchar(5000) NOT NULL,
-  reviewDatePosted varchar(25) NOT NULL,
+  reviewDatePosted varchar(50) NOT NULL,
   recommended boolean NOT NULL,
   helpful varchar(50) NOT NULL,
   PRIMARY KEY (id)
@@ -33,6 +33,6 @@ CREATE TABLE Comments (
   review_id int NOT NULL,
   user_id int NOT NULL,
   comment varchar(5000) NOT NULL,
-  commentDatePosted varchar(25) NOT NULL,
+  commentDatePosted varchar(50) NOT NULL,
   PRIMARY KEY (id)
 );
