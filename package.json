@@ -11,8 +11,8 @@
     "preset": "jest-puppeteer"
   },
   "scripts": {
-    "react-dev": "webpack -d --watch",
-    "server-dev": "nodemon server/server.js",
+    "react": "webpack -d --watch",
+    "start": "nodemon server/index.js",
     "test": "jest"
   },
   "dependencies": {
