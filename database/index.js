@@ -7,6 +7,13 @@ const server = mysql.createConnection({
   database: 'steam_review',
 });
 
+const getReviewInfo = (callback, gameId) => {
+  server.query(`SELECT Games.gameName, Reviews.review, Reviews.reviewDatePosted, Reviews.recommended, Reviews.helpful FROM Reviews, Games WHERE Games.id=${gameId} AND Reviews.game_id=${gameId}`, (err, result) => {
+    if (err) callback(err);
+    callback(null, result);
+  });
+};
+
 const insertInfo = (callback, insert) => {
   server.query(`INSERT into Games (gameName) VALUES ('${insert.game.gameName}')`, (err, result) => {
     if (err) callback(err);
@@ -28,4 +35,5 @@ const insertInfo = (callback, insert) => {
 
 module.exports = {
   insertInfo,
+  getReviewInfo,
 };
