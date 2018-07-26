@@ -1,16 +1,26 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const db = require('../database/index.js');
+var cors = require('cors')
 
 const app = express();
 
 app.use(express.static('client'));
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true,
 }));
 
 app.use(express.static('public'));
+
+app.get('/api/game/:gameId/review', (req, res) => {
+  db.getReviewInfo((err, data) => {
+    if (err) throw err;
+    console.log(data);
+    res.json(data);
+  }, req.params.gameId.replace(/[^0-9.]/g, ""));
+});
 
 app.listen(3001, () => {
   console.log('listening on port 3001');
