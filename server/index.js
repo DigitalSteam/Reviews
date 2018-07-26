@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const db = require('../database/index.js');
-var cors = require('cors')
+const cors = require('cors');
 
 const app = express();
 
@@ -31,7 +31,7 @@ app.listen(3001, () => {
 // const faker = require('faker');
 
 // const populate = () => {
-//   for (let i = 0; i < 100; i += 1) {
+//   for (let i = 0; i < 86; i += 1) {
 //     db.insertInfo((err) => {
 //       if (err) throw err;
 //       console.log('successfully inserted data');

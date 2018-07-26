@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Reviews from './reviews.jsx';
 // import $ from 'jquery';
 
 class App extends React.Component {
@@ -14,11 +15,11 @@ class App extends React.Component {
   }
 
   getReviews(gameId) {
-    this.state.currentGame = 1;
     fetch(`http://localhost:3001/api/game/:${gameId}/review`)
       .then(response => response.json())
       .then((data) => {
-        console.log(data);
+        this.setState({reviews: data});
+        console.log(this.state.reviews);
       })
       .catch((err) => {
         console.log('Error in getReviews');
@@ -28,7 +29,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div id="review"></div>
+      <Reviews review={this.state.reviews} />
     );
   }
 }
