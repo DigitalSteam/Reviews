@@ -11,15 +11,19 @@ class Reviews extends React.Component {
     const name = object.gameName;
     const review = object.review;
     const recommended = object.recommended;
-    const helpful = object.helpful;
+    const helpful = JSON.parse(object.helpful);
     const date = object.reviewDatePosted;
     return (
-      <div className="Review">
-        {name}
-        {review}
-        {recommended}
-        {helpful.yes}{helpful.no}{helpful.report}
-        {date}
+      <div className="reviewContainer">
+        <div className="date">{date}</div>
+        <div className="review">{review}</div>
+        <div className="recommended">{recommended}</div>
+        <div className="helpful">
+          <div className="yes">{helpful.yes}</div>
+          <div className="no">{helpful.no}</div>
+          <div className="funny">{helpful.funny}</div>
+          <div className="report">{helpful.report}</div>
+        </div>
       </div>
     );
   }
