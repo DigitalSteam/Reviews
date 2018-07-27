@@ -1,0 +1,52 @@
+body {
+  color: #c6d4df;
+  background-color: #1b2838;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+.review {
+  border-bottom: 1px solid #363f4c;
+  padding: 5px;
+  font-size: 13px;
+}
+
+.reviewContainer {
+  background-color: #18222f;
+  padding: 10px;
+  margin: 10px;
+}
+
+.helpful {
+  color: #647580;
+  padding: 5px;
+}
+
+.date {
+  color: #647580;
+  padding: 5px;
+  font-size: 10px;
+}
+
+.recommended1{
+  background-color: #0a0e14;
+}
+
+.buttonYes, .buttonNo, .ButtonFunny {
+  border: 0px;
+  background-color: #222d3d;
+  margin-left: 5px;
+  color: #66c0f4;
+  border-radius: 2px;
+}
+
+.buttonYes:hover, .buttonNo:hover, .ButtonFunny:hover {
+  border: 0px;
+  background-color: deepskyblue;
+  margin-left: 5px;
+  color: white;
+}
+
+.buttonYes:focus, .buttonNo:focus, .ButtonFunny:focus {
+  outline: none;
+}
