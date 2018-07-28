@@ -8,7 +8,14 @@ const server = mysql.createConnection({
 });
 
 const getReviewInfo = (callback, gameId) => {
-  server.query(`SELECT Games.gameName, Reviews.review, Reviews.reviewDatePosted, Reviews.recommended, Reviews.helpful FROM Reviews, Games WHERE Games.id=${gameId} AND Reviews.game_id=${gameId}`, (err, result) => {
+  server.query(`SELECT Games.gameName, Reviews.user_id, Reviews.review, Reviews.reviewDatePosted, Reviews.recommended, Reviews.helpful FROM Reviews, Games WHERE Games.id=${gameId} AND Reviews.game_id=${gameId}`, (err, result) => {
+    if (err) callback(err);
+    callback(null, result);
+  });
+};
+
+const getUserInfo = (callback, userId) => {
+  server.query(`SELECT Users.username, Users.numberOfGames, Users.numberOfReviews, Users.userImage FROM Users, Reviews WHERE Reviews.user_id=${userId} AND Users.id=${userId}`, (err, result) => {
     if (err) callback(err);
     callback(null, result);
   });
@@ -36,4 +43,5 @@ const insertInfo = (callback, insert) => {
 module.exports = {
   insertInfo,
   getReviewInfo,
+  getUserInfo,
 };

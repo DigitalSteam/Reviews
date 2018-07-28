@@ -22,6 +22,14 @@ app.get('/api/game/:gameId/review', (req, res) => {
   }, req.params.gameId.replace(/[^0-9.]/g, ""));
 });
 
+app.get('/api/user/:userId', (req, res) => {
+  db.getUserInfo((err, data) => {
+    if (err) throw err;
+    console.log(data);
+    res.json(data);
+  }, req.params.userId.replace(/[^0-9.]/g, ""));
+});
+
 app.listen(3001, () => {
   console.log('listening on port 3001');
 });
