@@ -52,9 +52,9 @@ class Reviews extends React.Component {
         <div className="review">{review}</div>
         <div className="helpful">
           <div>Was this review helpful?
-            <button className="buttonYes">&#9745; Yes</button>
-            <button className="buttonNo">&#9746; No</button>
-            <button className="buttonFunny">&#9786; Funny</button>
+            <button className="buttonYes" name="yes" onClick={this.props.helpfulClick.bind(this)}>&#9745; Yes</button>
+            <button className="buttonNo" name="no" onClick={this.props.helpfulClick.bind(this)}>&#9746; No</button>
+            <button className="buttonFunny" name="funny" onClick={this.props.helpfulClick.bind(this)}>&#9786; Funny</button>
           </div>
           <div className="yes">{`${helpful.yes} people found this review helpful`}</div>
           <div className="funny">{`${helpful.funny} people found this review funny`}</div>
