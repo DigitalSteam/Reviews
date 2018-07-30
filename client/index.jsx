@@ -8,7 +8,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      currentGame: 1,
+      currentGame: 2,
       reviews: [],
       users: [],
     };
@@ -19,9 +19,9 @@ class App extends React.Component {
     fetch(`http://localhost:3001/api/user/:${userId}`)
       .then(response => response.json())
       .then((data) => {
-          const user = this.state.users;
-          user[index] = data[0];
-          this.setState({users:user});
+        const user = this.state.users;
+        user[index] = data[0];
+        this.setState({ users: user });
       })
       .catch((err) => {
         console.log('Error in getUsers');
@@ -44,9 +44,18 @@ class App extends React.Component {
       });
   }
 
+  handleHelpfulClick(event) {
+    const currentButton = event.target.getAttribute('name');
+    if (currentButton === 'funny') {
+      alert(`Your account does not have sufficient privileges to use the ${currentButton} button`);
+    } else {
+      alert(`You must be logged in in order to use the ${currentButton} button`);
+    }
+  }
+
   render() {
     return (
-      <Reviews review={this.state.reviews} users={this.state.users}/>
+      <Reviews review={this.state.reviews} users={this.state.users} helpfulClick={this.handleHelpfulClick.bind(this)}/>
     );
   }
 }
