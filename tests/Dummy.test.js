@@ -10,5 +10,3 @@ describe('Google', () => {
     await expect(page).toMatch('google');
   });
 });
-
-// Testing
