@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import UserReview from './userReview.jsx';
 // import $ from 'jquery';
 
 class Reviews extends React.Component {
@@ -49,7 +50,7 @@ class Reviews extends React.Component {
           </div>
         </div>
         <div className="date">{`POSTED: ${date}`}</div>
-        <div className="review">{review}</div>
+        <UserReview review={review}/>
         <div className="helpful">
           <div>Was this review helpful?
             <button className="buttonYes" name="yes" onClick={this.props.helpfulClick.bind(this)}>&#9745; Yes</button>

@@ -1,14 +1,91 @@
 body {
+  background-color: #1b2838;
+}
+
+.reviewFormatBody {
+  display: flex;
+  justify-content: center;
+}
+
+.reviewBody {
+  padding-top: 20px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
   color: #c6d4df;
   background-color: #1b2838;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
 }
 
-.review {
+.reviewTopBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.selectReviewSort {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.reviewsSelectSort {
+  background-color: #203042;
+  color: #4582a5;
+  font-size: 15px;
+  border: none;
+}
+
+.overallReviews {
+  background-color: #2b465e;
+  padding: 10px;
+  font-size: 15px;
+}
+
+.overallReviewsInfo {
+  display: flex;
+  flex-direction: row;
+  color: #66C0F4;
+}
+
+.overallReviewsPositive{
+  color: #66C0F4;
+}
+
+.overallReviewsMixed {
+  color: #a8926a;
+}
+
+.overallReviewsNegative {
+  color: #c35c2c;
+}
+
+.overallReviewsNumber{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 8px;
+  color: #8ba6b6;
+  font-size: 12px;
+}
+
+.reviewsListTitle {
+  font-size: 17px;
+}
+
+.userReview {
+  display: flex;
+  flex-direction: column;
   border-bottom: 1px solid #363f4c;
   padding: 5px;
   font-size: 13px;
+}
+
+.readMore, .readLess {
+  display: flex;
+  justify-content: flex-end;
+  color: #66c0f4;
+  font-size: 10px;
 }
 
 .reviewContainer {
@@ -40,14 +117,14 @@ body {
   border-radius: 2px;
 }
 
-.buttonYes:hover, .buttonNo:hover, .ButtonFunny:hover {
+.buttonYes:hover, .buttonNo:hover, .buttonFunny:hover {
   border: 0px;
   background-color: deepskyblue;
   margin-left: 5px;
   color: white;
 }
 
-.buttonYes:focus, .buttonNo:focus, .ButtonFunny:focus {
+.buttonYes:focus, .buttonNo:focus, .buttonFunny:focus {
   outline: none;
 }
 
