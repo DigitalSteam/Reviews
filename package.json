@@ -12,7 +12,7 @@
   },
   "scripts": {
     "react": "webpack -d --watch",
-    "start": "nodemon server/index.js",
+    "start": "node server/index.js",
     "test": "jest"
   },
   "dependencies": {

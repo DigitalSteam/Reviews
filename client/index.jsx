@@ -61,7 +61,7 @@ class App extends React.Component {
   }
 
   handleChangeGame(event) {
-    const game = prompt();
+    const game = prompt('Please Enter A Game ID');
     this.state.currentGame = game;
     this.getReviews(this.state.currentGame);
   }
@@ -106,23 +106,25 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="reviewBody">
-      <div className="reviewTopBar">
-        <div className="reviewsListTitle">Customer Reviews</div>
-        <div className="reviewLogin" onClick={this.handleChangeGame.bind(this)}>Change Game</div>
-      </div>
-      <OverallReviews reviews={this.state.reviews} overallReviews={this.state.overallReviews}/>
-      <div className="selectReviewSort">
-        <select className="reviewsSelectSort" onChange={this.select.bind(this)}>
-          <option value="null">Filter Type</option>
-          <option value="helpful">Helpful</option>
-          <option value="positive">Positive</option>
-          <option value="negative">Negative</option>
-          <option value="recent">Recent</option>
-          <option value="oldest">Oldest</option>
-        </select>
-      </div>
-      <Reviews review={this.state.reviews} users={this.state.users} helpfulClick={this.handleHelpfulClick.bind(this)}/>
+      <div className="reviewFormatBody">
+        <div className="reviewBody">
+        <div className="reviewTopBar">
+          <div className="reviewsListTitle">Customer Reviews</div>
+          <div className="reviewLogin" onClick={this.handleChangeGame.bind(this)}>Change Game</div>
+        </div>
+        <OverallReviews reviews={this.state.reviews} overallReviews={this.state.overallReviews}/>
+        <div className="selectReviewSort">
+          <select className="reviewsSelectSort" onChange={this.select.bind(this)}>
+            <option value="null">Filter Type</option>
+            <option value="helpful">Helpful</option>
+            <option value="positive">Positive</option>
+            <option value="negative">Negative</option>
+            <option value="recent">Recent</option>
+            <option value="oldest">Oldest</option>
+          </select>
+        </div>
+        <Reviews review={this.state.reviews} users={this.state.users} helpfulClick={this.handleHelpfulClick.bind(this)}/>
+        </div>
       </div>
     );
   }

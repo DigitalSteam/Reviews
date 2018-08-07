@@ -1,9 +1,9 @@
 const mysql = require('mysql');
 
 const server = mysql.createConnection({
-  host: 'localhost',
+  host: 'database',
   user: 'root',
-  password: '',
+  password: 'root',
   database: 'steam_review',
 });
 

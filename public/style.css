@@ -2,7 +2,14 @@ body {
   background-color: #1b2838;
 }
 
+.reviewFormatBody {
+  display: flex;
+  justify-content: center;
+}
+
 .reviewBody {
+  padding-top: 20px;
+  width: 80%;
   display: flex;
   flex-direction: column;
   color: #c6d4df;
